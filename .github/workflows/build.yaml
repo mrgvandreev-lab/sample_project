@@ -1,10 +1,10 @@
 name: build 
 on: [push]
 jobs:
-  build and test:
+  build-and-test:
     runs-on: ubuntu-26.04
     steps:
-      - users: actions/checkout@v7
+      - uses: actions/checkout@v7
       - run: cmake -S . -B build
       - run: cmake --build build
       - run: ctest --test-dir build --output-on-failure
