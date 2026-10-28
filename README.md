@@ -1,69 +1,71 @@
 # sample_project
 
-A simple C++ project for the Software Engineering course.
+Учебный проект на C++ для курса «Программная инженерия».
 
-## What the program does
+Авторы: команда БУРАН (Бурдуков Тимофей, Андреев Глеб).
 
-The program takes two integer numbers from the command line and prints their sum.
+## Что делает программа
+
+Программа берёт из командной строки два целых числа и печатает их сумму.
 
 ```bash
 ./build/main 12 13
 ```
 
-Output: `25`
+Вывод: `25`
 
-If the arguments are wrong, the program prints an error and exits with code 1.
+Если аргументов не два или это не числа, программа печатает ошибку и завершается с кодом 1.
 
-## Project structure
+## Структура проекта
 
-- `include/` — header of the `mymath` library
-- `lib/` — code of the `mymath` library
-- `src/` — the program (`main.cpp`)
-- `tests/` — tests (GoogleTest)
-- `bench/` — benchmark (Google Benchmark)
-- `Doxyfile` — settings for the documentation (Doxygen)
-- `.github/workflows/build.yaml` — CI
+- `include/` — заголовочный файл библиотеки `mymath`
+- `lib/` — код библиотеки `mymath`
+- `src/` — программа (`main.cpp`)
+- `tests/` — тесты (GoogleTest)
+- `bench/` — бенчмарк, замер скорости (Google Benchmark)
+- `Doxyfile` — настройки документации (Doxygen)
+- `.github/workflows/build.yaml` — CI (GitHub Actions)
 
-## Requirements
+## Что нужно установить
 
-- CMake 3.16 or newer
-- A C++17 compiler (g++ or clang++)
-- Git (CMake downloads GoogleTest and Google Benchmark)
-- Doxygen (only for the documentation)
+- CMake 3.16 или новее
+- Компилятор C++17 (g++ или clang++)
+- Git (CMake сам скачивает GoogleTest и Google Benchmark)
+- Doxygen (только для документации)
 
-## Build
+## Сборка
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ```
 
-## Run tests
+## Запуск тестов
 
 ```bash
 ctest --test-dir build --output-on-failure
 ```
 
-## Run benchmark
+## Запуск бенчмарка
 
 ```bash
 ./build/bench
 ```
 
-## Build documentation
+## Сборка документации
 
 ```bash
 doxygen Doxyfile
 ```
 
-The HTML files are in `build/docs/html`.
+HTML-файлы появятся в папке `build/docs/html`. Откройте `index.html` в браузере.
 
 ## CI
 
-On every push, GitHub Actions does these steps:
+При каждом push на GitHub автоматически выполняется:
 
-1. Builds the project.
-2. Runs the tests.
-3. Runs the benchmark.
-4. Runs the program.
-5. Builds the documentation and publishes it to GitHub Pages (only for the `main` branch).
+1. Сборка проекта.
+2. Запуск тестов.
+3. Запуск бенчмарка.
+4. Запуск программы.
+5. Сборка документации и публикация на GitHub Pages (только для ветки `main`).
