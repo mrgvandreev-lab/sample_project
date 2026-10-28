@@ -58,7 +58,7 @@ ctest --test-dir build --output-on-failure
 doxygen Doxyfile
 ```
 
-HTML-файлы появятся в папке `build/docs/html`. Откройте `index.html` в браузере.
+HTML-файлы появятся в папке `docs/html`. Откройте `index.html` в браузере.
 
 ## CI
 
