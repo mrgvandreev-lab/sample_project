@@ -1,0 +1,8 @@
+PROJECT_NAME           = sample_project
+OUTPUT_DIRECTORY       = build/docs
+INPUT                  = README.md include lib src
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
